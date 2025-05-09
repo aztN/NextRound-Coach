@@ -116,8 +116,17 @@
     function showTab(id) {
       document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
       document.getElementById(id).classList.add('active');
+      
+      const hero = document.querySelector('.hero');
+      if (id === 'home') {
+        hero.style.display = 'flex';
+      } else {
+        hero.style.display = 'none';
+      }
+
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
     window.onload = () => showTab('home');
   </script>
 </head>
